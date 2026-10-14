@@ -37,8 +37,8 @@ public class Livro {
     @JsonProperty("edicao")
     private Date edicao;
 
-    // @ManyToOne()
-    // @JsonProperty("nacionalidade")
-    // private Autor autor;
+    @ManyToOne() // tem que ter alguma coisa aqui
+    @JoinColumn(name = "autor_id")
+    private Autor autor;
 
 }

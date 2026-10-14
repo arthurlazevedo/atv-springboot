@@ -17,6 +17,9 @@ public class AutorResponseDto {
     @JsonProperty("isbn")
     private String isbn;
 
+    @JsonProperty("autor_id")
+    private Long autor_id;
+
     @JsonProperty("ano")
     private String ano;
 

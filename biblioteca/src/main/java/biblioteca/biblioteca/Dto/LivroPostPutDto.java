@@ -22,6 +22,10 @@ public class LivroPostPutDto {
     @NotBlank(message = "ISBN do livro não pode ser vazio")
     private String isbn;
 
+    @JsonProperty("autor_id")
+    @NotBlank(message = "Livro deve ter autor")
+    private Long autor_id;
+
     @JsonProperty("ano")
     @NotBlank(message = "Ano do livro não pode ser vazia")
     private String ano;
