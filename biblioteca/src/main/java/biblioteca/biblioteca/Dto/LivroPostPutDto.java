@@ -1,7 +1,5 @@
 package biblioteca.biblioteca.Dto;
 
-import java.sql.Date;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
@@ -31,6 +29,6 @@ public class LivroPostPutDto {
     private String ano;
 
     @JsonProperty("edicao")
-    private Date edicao;
+    private String edicao;
 
 }

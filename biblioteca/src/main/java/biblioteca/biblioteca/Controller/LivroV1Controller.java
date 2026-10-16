@@ -29,8 +29,8 @@ public class LivroV1Controller {
 
     @GetMapping("")
     public ResponseEntity<List<LivroResponseDto>> buscarTodosLivros(
-        @RequestParam(nullable = true) String isbn,
-        @RequestParam(nullable = true) String titulo
+        @RequestParam(required = false) String isbn,
+        @RequestParam(required = false) String titulo
     ) {
         List<LivroResponseDto> livros; 
 

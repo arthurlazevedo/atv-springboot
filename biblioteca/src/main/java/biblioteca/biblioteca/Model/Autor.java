@@ -1,5 +1,7 @@
 package biblioteca.biblioteca.Model;
 
+import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -28,7 +30,7 @@ public class Autor {
     private String nacionalidade;
 
     // Adicione a relação com Livro aqui
-    @OneToMany(mappedBy = "autor_id") // provavelmente tá errado
-    private Livro livro;
+    @OneToMany(mappedBy = "autor_id", cascade = CascadeType.ALL)
+    private List<Livro> livros;
 
 }

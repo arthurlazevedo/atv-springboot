@@ -1,6 +1,8 @@
 package biblioteca.biblioteca.Repository;
 
-import biblioteca.biblioteca.Model.Autor;
+import java.util.List;
+
+import biblioteca.biblioteca.Model.Livro;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

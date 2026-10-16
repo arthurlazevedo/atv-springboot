@@ -64,8 +64,9 @@ public class LivroCrudPadraoService implements LivroCrudService {
     @Override
     public LivroResponseDto atualizarLivro(Long id, LivroPostPutDto livroPostPutDto) {
         Livro livro = obterLivroExistente(id);
-        livro.setNomeLivro(livroPostPutDto.getNomeLivro());
-        livro.setNacionalidade(livroPostPutDto.getNacionalidade());
+        livro.setTitulo(livroPostPutDto.getTitulo());
+	livro.setAno(livroPostPutDto.getAno());
+	livro.setEdicao(livroPostPutDto.getEdicao());
         return modelMapper.map(livroRepository.save(livro), LivroResponseDto.class);
     }
 

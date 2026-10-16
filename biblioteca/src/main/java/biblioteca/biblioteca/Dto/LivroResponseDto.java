@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class AutorResponseDto {
+public class LivroResponseDto {
     @JsonProperty("titulo")
     private String titulo;
 
@@ -24,5 +24,5 @@ public class AutorResponseDto {
     private String ano;
 
     @JsonProperty("edicao")
-    private Date edicao;
+    private String edicao;
 }
