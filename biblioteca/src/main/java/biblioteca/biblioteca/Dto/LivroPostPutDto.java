@@ -22,13 +22,13 @@ public class LivroPostPutDto {
 
     @JsonProperty("autor_id")
     @NotBlank(message = "Livro deve ter autor")
-    private Long autor_id;
+    private Long autorId;
 
     @JsonProperty("ano")
     @NotBlank(message = "Ano do livro não pode ser vazia")
     private String ano;
 
     @JsonProperty("edicao")
-    private String edicao;
+    private int edicao;
 
 }

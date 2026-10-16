@@ -30,7 +30,7 @@ public class Autor {
     private String nacionalidade;
 
     // Adicione a relação com Livro aqui
-    @OneToMany(mappedBy = "autor_id", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "autor", cascade = CascadeType.ALL)
     private List<Livro> livros;
 
 }

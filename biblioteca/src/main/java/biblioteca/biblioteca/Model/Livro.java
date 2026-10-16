@@ -29,7 +29,7 @@ public class Livro {
 
     @Column(name = "ds_edicao")
     @JsonProperty("edicao")
-    private String edicao;
+    private int edicao;
 
     @ManyToOne
     @JoinColumn(name = "autor_id")
