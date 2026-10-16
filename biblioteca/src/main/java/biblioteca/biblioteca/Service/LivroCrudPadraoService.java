@@ -57,13 +57,13 @@ public class LivroCrudPadraoService implements LivroCrudService {
     }
 
     @Override
-    public LivroResponseDto buscarLivro(Long id) {
-        return modelMapper.map(obterLivroExistente(id), LivroResponseDto.class);
+    public LivroResponseDto buscarLivro(String isbn) {
+        return modelMapper.map(obterLivroExistente(isbn), LivroResponseDto.class);
     }
 
     @Override
-    public LivroResponseDto atualizarLivro(Long id, LivroPostPutDto livroPostPutDto) {
-        Livro livro = obterLivroExistente(id);
+    public LivroResponseDto atualizarLivro(String isbn, LivroPostPutDto livroPostPutDto) {
+        Livro livro = obterLivroExistente(isbn);
         livro.setTitulo(livroPostPutDto.getTitulo());
 	livro.setAno(livroPostPutDto.getAno());
 	livro.setEdicao(livroPostPutDto.getEdicao());
@@ -71,14 +71,14 @@ public class LivroCrudPadraoService implements LivroCrudService {
     }
 
     @Override
-    public void removerLivro(Long id) {
+    public void removerLivro(String isbn) {
         // delete(entidade) permite que o cascade da relação remova também os livros do livro
-        livroRepository.delete(obterLivroExistente(id));
+        livroRepository.delete(obterLivroExistente(isbn));
     }
 
-    // id inexistente = 404
-    private Livro obterLivroExistente(Long id) {
-        return livroRepository.findById(id)
+    // isbn inexistente = 404
+    private Livro obterLivroExistente(String isbn) {
+        return livroRepository.findById(isbn)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Livro não encontrado"));
     }
 }
