@@ -21,7 +21,6 @@ public class LivroPostPutDto {
     private String isbn;
 
     @JsonProperty("autor_id")
-    @NotBlank(message = "Livro deve ter autor")
     private Long autorId;
 
     @JsonProperty("ano")

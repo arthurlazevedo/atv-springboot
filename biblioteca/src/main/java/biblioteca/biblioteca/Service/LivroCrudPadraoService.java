@@ -65,8 +65,8 @@ public class LivroCrudPadraoService implements LivroCrudService {
     public LivroResponseDto atualizarLivro(String isbn, LivroPostPutDto livroPostPutDto) {
         Livro livro = obterLivroExistente(isbn);
         livro.setTitulo(livroPostPutDto.getTitulo());
-	livro.setAno(livroPostPutDto.getAno());
-	livro.setEdicao(livroPostPutDto.getEdicao());
+        livro.setAno(livroPostPutDto.getAno());
+        livro.setEdicao(livroPostPutDto.getEdicao());
         return modelMapper.map(livroRepository.save(livro), LivroResponseDto.class);
     }
 
